@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Lab III Segundo Parcial Recuperatorio - Coarasa</title>
+
+        <link rel="stylesheet" type="text/css" href="./css/jsonEstilos.css">
+        <script src="./clases/Persona.js"></script>
+        <script src="./clases/Cliente.js"></script>
+        <script src="./clases/FuncionesHtnl.js"></script>
+    </head>
+    <body>
+        <!-- Selección Persona -->
+        <div class="contenedorTitulo">
+            <div class="tituloH2" >
+                <h2>Persona</h2>
+            </div>
+            <div class="SeleccionMascota1">
+                <button id="btnAbrirVehiculo" onclick="abrirVehiculo();">Cliente</button>
+            </div>
+            <div class="contenedorBuscador">
+                <h2>Filtar</h2>
+            </div>
+            <div class="flex1">
+                <!--<input type="text" class = "inputBuscador" size="35" id="filter" name="filter">-->
+                <select id="SexoFiltro" name="SexoFiltro" >
+                    <option value="Femenino">Todos</option>
+                    <option value="Femenino">Femenino</option>
+                    <option value="Masculino">Masculino</option>
+                </select>
+                
+            </div>
+            <div class="flex2">
+                <button id="btnBusar" onclick="teclaPromedio();">Promedio</button>
+            </div>
+        </div>
+        <!-- FIN Selección Vehiculo --> 
+
+        <!-- Formulario de Persona -->
+        <div id="contAgregarVehiculo" class="contenedor" hidden> <!-- hidden -->
+            <div class="bCerrar" id="contenedor1">
+                <div class="tituloH2" >
+                    <h2>Cliente</h2>
+                </div>
+                <div>
+                    <button id="btnCerrarVehiculo" class="cerrar" onclick="cerrarVehiculo();">x</button>
+                </div>
+            </div>
+            <br>
+            <label for="marca">ID</label>
+            <input type="text" id="idFormulario" class="sinError" name="idFormulario" disabled ></input>
+            <br>
+            <br>
+            <!-- <label for="marca">Nombre</label>-->
+            <input type="text" id="nombreFormulario" class="sinError" name="nombreFormulario" placeholder="Nombre"></input>
+            <br>
+            <!-- <label for="modelo">Apellido</label>-->
+            <input type="text" id="apellidoFormulario" class="sinError" name="apellidoFormulario" placeholder="Apellido"></input>
+            <br>
+            <!-- <label for="precio">Edad</label><br>-->
+            <input type="number" id="edadFormulario" class="sinError" name="edadFormulario" placeholder="Edad ..."></input>
+            <br>
+
+            <label for="SexoFormulario">Sexo</label><br>
+            <br>
+            <select id="SexoFormulario" name="SexoFormulario" >
+                <option value="Femenino">Femenino</option>
+                <option value="Masculino">Masculino</option>
+            </select>
+            <br>
+
+            <div id="contenedor2">
+                <button id="btnGuardarVehiculo" onclick="GuardarVehiculo();">Guardar</button>
+                <button id="LimpiarVehiculo" onclick="limpiarVehiculo();">Limpiar</button>
+            </div>
+        
+        </div> 
+        <!--Fin contenedor Vehiculo Auto -->
+
+        <!-- Filtro -->
+        <div>
+            <h2>Campos a Mostrar</h2>
+            <label for="idCheck">Id(identificador)</label>
+            <input type="checkbox" id="idCheck" name="id" checked>
+
+            <label for="nombreCheck">Nombre</label>
+            <input type="checkbox" id="nombreCheck" name="nombre" checked>
+
+            <label for="apellidoCheck">Apellido</label>
+            <input type="checkbox" id="apellidoCheck" name="apellido" checked>
+
+            <label for="edadCheck">Edad</label>
+            <input type="checkbox" id="edadCheck" name="edad" checked>
+
+            <label for="sexoCheck">Sexo</label>
+            <input type="checkbox" id="sexoCheck" name="sexo" checked>
+        </div>
+        <hr>
+
+        <!-- Tabla Vehiculos -->
+        <div class="contenedorPrincipalTabla">
+            <div id = "TablaContenedor" class="contenedorTabla">
+                <h2>LISTA DE CLIENTES</h2>
+                <table>
+                    <thead>
+                        <th name="idTabla">Identificador</th>
+                        <th name="nombreTabla">Nombre</th>
+                        <th name="apellidoTabla">Apellido</th>
+                        <th name="edadTabla">Edad</th>
+                        <th name="sexoTabla">Sexo</th>
+                        <th>Acción</th>
+                    </thead>    
+                    <tbody id="cuerpo">
+    
+                    </tbody>
+                </table>
+            </div>
+        </div> 
+
+    </body>
+</html>
